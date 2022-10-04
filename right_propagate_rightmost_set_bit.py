@@ -3,10 +3,7 @@
 def right_prop(number):
     right_most_set_bit = number & ~(number-1)
 
-    while right_most_set_bit:
-        right_most_set_bit >>= 1
-        number |= right_most_set_bit
-    return number
+    return number | right_most_set_bit - 1
 
 
 for i in range(80, 100):
